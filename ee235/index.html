@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EE235 Continuous Time Linear Systems</title>
+<link href='http://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css' />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+
+
+<script type="text/javascript" src="js/jquery.address-1.3.2.min.js"></script>
+
+<script type="text/javascript">
+$('navlist li a').click(function() {  
+    $.address.value($(this).attr('href'));  
+});
+
+$(document).ready(function(){
+	// Navigation tabs
+	$.address.externalChange(function(event) {
+		var tab = event.value.split('/')[1] || 'home';
+		
+		$('#' + tab + 'Nav').parent().toggleClass("active");
+		$('#' + tab + 'Nav').parent().siblings("li").removeClass("active");
+		$("#" + tab + "Content").show("slow").siblings().hide("fast");
+	});
+	
+	// Accordion
+	//$(".accordion h3").addClass("active");
+	//$(".accordion div:not(:first)").hide();
+	//$(".accordion div").hide();
+	$(".accordion h3").click(function(){
+		$(this).next("div").slideToggle("slow");
+		//.siblings("p:visible").slideUp("slow");
+		$(this).toggleClass("active");
+		//$(this).siblings("h3").removeClass("active");
+	});
+	
+	//$("#sidebar2 .accordion h3:nth-of-type(3)").click()
+
+});
+</script>
+
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+/* #sidebar1 { width: 400px; } */
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+/*#sidebar1 { padding-top: 30px; } */
+#mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<div id="navBackground"></div>
+<!-- begin #container -->
+<div id="container" >
+	<!-- begin #header -->
+    <div id="header">
+    	<div class="topHeader">
+            <div class="logoContainer">
+                <div class="logo">
+                    EE <span>235</span> <span class="subtitle">(Spring 2011)</span>
+                </div>
+                <div class="subtitle">
+                	Continuous Time Linear Systems
+                </div>
+            </div>
+			<!-- Hide icons
+            <div class="icons">
+                <ul>
+                    <li><a href=""><img src="images/Facebook-32.png" alt="" /></a></li>
+                    <li><a href=""><img src="images/Twitter-32.png" alt="" /></a></li>
+                    <li><a href=""><img src="images/Linkedin-32.png" alt="" /></a></li>
+                    <li><a href=""><img src="images/Yahoo-32.png" alt="" /></a></li>
+                </ul>
+            </div>
+			-->
+        </div>
+        <div class="clearfloat"></div>
+        <div id="navcontainer">
+            <ul id="navlist">
+                <li><a id="homeNav" href="#home">Home</a></li>
+                <li><a id="syllabusNav" href="#syllabus">Syllabus</a></li>
+                <li><a id="classnotesNav" href="#classnotes">Class Notes</a></li>
+				<li><a id="labsNav" href="#labs">Labs</a></li>
+				<li><a id="homeworkNav" href="#homework">Homework</a></li>
+                <li><a id="gopost" href="https://catalyst.uw.edu/gopost/board/ktsukida/21078/">GoPost</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- end #header -->
+	<!-- begin #mainContent -->
+    <div id="mainContent">
+		<!-- begin #sidebar1 -->
+		<div id="sidebar1">
+			<div id="homeContent" class="tabContent">
+				<div class="titleContent">Welcome</div>
+				<div class="bodyContent">
+					<h1>Welcome to EE235</h1>
+					<p>
+						Lectures are MWF 2:30-3:20pm in <a href="http://www.washington.edu/students/maps/map.cgi?EEB">EEB</a> 105, and Tues 2:30-3:20pm in <a href="http://www.washington.edu/students/maps/map.cgi?JHN">JHN</a> 102** <br />
+						<span class="note">(**Some Tuesdays may be in EEB 105.)</span>
+					</p>
+					
+					<p>Textbooks
+					<ul>
+						<li><a href="http://www.amazon.com/Signals-Systems-2nd-Alan-Oppenheim/dp/0138147574/ref=sr_1_3?s=books&ie=UTF8&qid=1300869765&sr=1-3">Signals and Systems</a> by Oppenheim and Willsky</li>
+						<li><a href="http://www.amazon.com/Schaums-Outline-Signals-Systems-Second/dp/007163472X/ref=dp_ob_title_bk">Schaum's Signals and Systems</a> (We strongly recommend this book. This book is only $20 and contains many solved example problems)</li>
+					</ul>
+					</p>
+					
+					<h1>Professor Maryam Fazel</h1>
+					<p>
+						<span class="info">Office Hours:</span> To be determined<br />
+						<span class="info">Office:</span> CSE 230<br />
+						<span class="info">Email:</span> <a href='mailt&#111;&#58;&#37;6Df%&#54;&#49;&#122;%&#54;5l&#64;e%6&#53;&#46;%&#55;7a&#115;%6&#56;i&#110;gton&#46;%65%&#54;&#52;u'>mfaz&#101;&#108;&#64;&#101;e&#46;wash&#105;ngton&#46;&#101;du</a><br />
+					</p>
+					<h2>TA Eric Swanson</h2>
+					<p>
+						<span class="info">Office Hours:</span> To be determined<br />
+						<span class="info">Location:</span> <br />
+						<span class="info">Email:</span> <a href='mail&#116;&#111;&#58;s%&#55;7&#97;nso%&#54;&#53;r%&#52;0%67mai&#108;&#46;co%&#54;D'>&#115;w&#97;&#110;soer&#64;gm&#97;&#105;&#108;&#46;c&#111;&#109;</a><br />
+					</p>
+					<h2>TA Kristi Tsukida</h2>
+					<p>
+						<span class="info">Office Hours:</span> To be determined<br />
+						<span class="info">Location:</span> <br />
+						<!--emails obfuscated using http://www.albionresearch.com/misc/obfuscator.php -->
+						<span class="info">Email:</span> <a href='mailto&#58;%&#54;B&#37;74su&#37;6Bi&#100;&#37;61&#64;uw&#46;%65du'>ktsuk&#105;d&#97;&#64;uw&#46;edu</a><br />
+					</p>
+				</div>
+			</div>
+			<div id="classnotesContent" class="tabContent">
+				<div class="titleContent">Class Notes</div>
+				<div class="bodyContent">
+					<h1>Class notes will be here.  (these links don't work yet)</h1>
+					<p><a href="note1.pdf">Note 1</a></p>
+					<p><a href="note2.pdf">Note 2</a></p>
+					<p><a href="note3.pdf">Note 3</a></p>
+				</div>
+			</div>
+			<div id="labsContent" class="tabContent">
+				<div class="titleContent">Labs</div>
+				<div class="bodyContent">
+					<h1>Info</h1>
+					<p>Labs held in <a href="http://www.washington.edu/students/maps/map.cgi?SIG">SIG</a> 232.
+					</p>
+					<ul>
+					<li>Sec AA: Friday 3:30-5:20pm</li>
+					<li>Sec AB: Thursday 4:30-6:20pm</li>
+					<li>Sec AC: Wednesday 12:30-2:20pm</li>
+					</ul>
+					<p><a href="lab/MATLAB.pdf">Using Matlab Outside of Lab</a></p>
+					<p>You can (and are encouraged to) work on your lab outside of your lab hours by:
+					<ul><li><a href="http://www.mathworks.com/academia/student_version/">purchasing Matlab</a> (student version is $99)</li>
+					<li>or use any EE lab computer <a href="https://www.ee.washington.edu/computing/faq/labs/locations.html">on campus</a> or remotely<a href="https://www.ee.washington.edu/cgi-bin/computing/rdp_check.pl"> (windows)</a> / <a href="https://www.ee.washington.edu/computing/faq/labs/linuxlab.html">(mac or linux)</a></li>
+					</ul>
+					</p>
+					
+					
+					<h1>Lab Material</h1>
+					<h4>Week 1 (Mar 29 - Apr 1)</h4>
+					<h5><a href="lab/EE235-Lab1.pdf">Lab 1</a> and
+						<a href="lab/lab_1_requirements.pdf">Requirements</a> </h5>
+					<ul>
+						<li><a href="http://cnx.org/content/m13554/latest/dampedCosine.m">dampedCosine.m</a></li>
+						<li><a href="http://cnx.org/content/m13554/latest/compexp.m">compexp.m</a></li>
+					</ul>
+					
+					<h4>Week 2-3 (Apr 4 - Apr 15)</h4>
+					<h5><a href="lab/EE235-Lab2.pdf">Lab 2</a> and
+						<a href="lab/lab_2_requirements.pdf">Requirements</a> </h5>
+					<ul>
+						<li><a href="lab/fade.m">fade.m</a></li>
+						<li><a href="http://cnx.org/content/m13555/latest/timescale.m">timescale.m</a></li>
+						<li><a href="http://cnx.org/content/m13854/latest/">Sound Resources</a></li>
+					</ul>
+					<h4>Week 4-5 (Apr 18 - Apr 29)</h4>
+					<h5><a href="lab/EE235-Lab3.pdf">Lab 3</a> and
+						<a href="lab/lab_3_requirements.pdf">Requirements</a> </h5>
+					<h4>Week 6-7 (May 2 - May 13)</h4>
+					<h5><a href="lab/EE235-Lab4.pdf">Lab 4</a> and
+						<a href="lab/lab_4_requirements.pdf">Requirements</a> </h5>
+					<ul>
+						<li><a href="http://cnx.org/content/m13854/latest/trumpet.mat">trumpet.mat</a></li>
+						<li><a href="http://cnx.org/content/m13599/latest/Ck.m">Ck.m</a></li>
+					</ul>
+					<h4>Week 8-9 (May 16 - May 27)</h4>
+					<h5><a href="lab/EE235-Lab5.pdf">Lab 5</a> and
+						<a href="lab/lab_5_requirements.pdf">Requirements</a> </h5>
+					<ul>
+						<li><a href="http://cnx.org/content/m13854/latest/castanets44m.wav">castanets44m.wav</a></li>
+						<li><a href="http://cnx.org/content/m13854/latest/mixed.wav">mixed.wav</a></li>
+					</ul>
+					<h4>Week 10-finals (May 30 - June 10)</h4>
+					<h5><a href="lab/EE235-Lab6.pdf">Lab 6</a> and
+						<a href="lab/lab_6_requirements.pdf">Requirements</a> </h5>
+					
+				</div>
+			</div>
+			<div id="homeworkContent" class="tabContent">
+				<div class="titleContent">Homework</div>
+				<div class="bodyContent">
+					<h1>Info</h1>
+					<ul>
+						<li>Write legibly</li>
+						<li>Clearly explain your thinking (use words, equations, and/or pictures)</li>
+						<li>Box your answers</li>
+						<li>Label your axes</li>
+						<li>Do not plagarize or copy (cite sources and classmates who helped you)</li>
+					</ul>
+					<p>Latex source is provided so you can do your hw in <a href="http://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX.</a>  Using latex is NOT required.</p>
+					<p class="note">Windows users who want to use latex should install <a href="http://miktex.org/2.9/setup">MikTex</a> and <a href="http://sourceforge.net/projects/texniccenter/files/TeXnicCenter%20Alpha/TXCSetup_2Alpha3.exe/download">TexnicCenter</a></p>
+					<h1>Assignments</h1>
+					
+					<p id="homeworkLinks">
+						<a href="hw/hw1.pdf">Homework 1</a>
+						<a href="hw/hw1.zip">latex</a>
+						Due: MM-DD-YYYY
+						<!-- Hide these
+						<a class="solution" href="hw1_solution.pdf">Solution</a><br />
+						
+						<a href="hw2.pdf">Homework 2</a>
+						<a href="hw2.zip">tex</a>
+						<a class="solution" href="hw2_solution.pdf">Solution</a><br />
+						
+						<a href="hw3.pdf">Homework 3</a>
+						<a href="hw3.zip">tex</a>
+						<a class="solution" href="hw3_solution.pdf">Solution</a><br />
+						
+						<a href="hw4.pdf">Homework 4</a>
+						<a href="hw4.zip">tex</a>
+						<a class="solution" href="hw4_solution.pdf">Solution</a><br />
+						
+						<a href="hw5.pdf">Homework 5</a>
+						<a href="hw5.zip">tex</a>
+						<a class="solution" href="hw5_solution.pdf">Solution</a><br />
+						
+						<a href="hw6.pdf">Homework 6</a>
+						<a href="hw6.zip">tex</a>
+						<a class="solution" href="hw6_solution.pdf">Solution</a><br />
+						
+						<a href="hw7.pdf">Homework 7</a>
+						<a href="hw7.zip">tex</a>
+						<a class="solution" href="hw7_solution.pdf">Solution</a><br />
+						
+						<a href="hw8.pdf">Homework 8</a>
+						<a href="hw8.zip">tex</a>
+						<a class="solution" href="hw8_solution.pdf">Solution</a><br />
+						-->
+					</p>
+					<p></p>
+				</div>
+			</div>
+			<div id="syllabusContent" class="tabContent">
+				<div class="titleContent">Syllabus</div>
+				<div class="bodyContent">
+					<h1>Coming soon, check back later.</h1>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<!-- end #sidebar1 -->
+		
+		<div id="sidebar2">
+			<!--<div class="titleContent">Links</div>-->
+			<div class="accordion">
+				<h3>Announcements</h3>
+				<div id="announcementsContent" class="accordionContent">
+				<ul>
+					<li>Labs start <b>THIS WEEK (Week 1)</b></li>
+					<li>Class starts <b>Monday March 28</b>.  Get ready to process some signals, Fourier style.</li>
+					<li><a href="https://catalyst.uw.edu/gopost/board/ktsukida/21078/">GoPost Forum</a> is up</li>
+				</ul>
+				</div>
+				<h3>Links</h3>
+				<div id="linksContent" class="accordionContent">
+					<p><a href="http://www.ee.washington.edu/class/235dl">Dr. Riskin Interactive Notes</a></p>
+					<p><a href="https://catalyst.uw.edu/gopost/board/ktsukida/21078/">GoPost Forum</a></p>
+				</div>
+				<h3>Handouts</h3>
+				<div id="handoutContent" class="accordionContent">
+					<p><a href="FourierTransformPairs.pdf">Fourier Transform Pairs</a></p>
+					<p><a href="LaplaceTables.pdf">Laplace Transform Pairs</a></p>
+					<p><a href="lab/MATLAB.pdf">Using Matlab Outside of Lab</a></p>
+				</div>
+				
+			</div>
+		</div>
+		<!-- end #sidebar2 -->
+	</div>
+    <!-- end #mainContent -->
+    <br class="clearfloat" />
+</div>
+<!-- end #container -->
+<!-- begin #footer -->
+<div id="footer">
+    <div class="copyright">
+    	<p>Copyright &copy; 2011 Maryam Fazel, Kristi Tsukida, Eric Swanson.</p>
+		<p>Sorry, if this page is really messed up in Internet Explorer.  Why not try <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a> or <a href="http://www.google.com/chrome">Chrome</a>?</p>
+		<p>Design based on <a href="http://www.free-jquery-templates.com" title="Free Jquery Templates">Free Jquery Templates</a></p>
+    </div>
+</div>
+<!-- end #footer -->
+
+</body>
+</html>
